@@ -31,7 +31,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
 
         }
-        public static AuthorizationExtensionBuilder AddEntityFrameworkStores<TContext>(this AuthorizationExtensionBuilder builder, Action<StoreOptions> setupAction)
+        public static AuthorizationExtensionBuilder AddEntityFrameworkStores<TContext>(this AuthorizationExtensionBuilder builder, Action<StoreOptions> setupAction=null)
             where TContext : DbContext
         {
             builder.CheckContext(typeof(TContext));
