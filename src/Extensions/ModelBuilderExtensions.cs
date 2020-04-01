@@ -19,7 +19,6 @@ namespace AuthorizationExtenison.EntityFrameworkCore
                 resource.Property<string>("PermissionId").HasMaxLength(200).IsRequired();
                 resource.Property<string>("ParentId").HasMaxLength(200);
                 resource.Property<string>("Description").HasMaxLength(300);
-                resource.Property<bool>("IsEnabled").IsRequired();
                 string name = storeOptions.SystemResource.Name ?? storeOptions.ResourceType.Name;
                 string schema = storeOptions.SystemResource.Schema;
                 if (string.IsNullOrEmpty(schema))
