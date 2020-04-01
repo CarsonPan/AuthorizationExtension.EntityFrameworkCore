@@ -37,7 +37,8 @@ namespace AuthorizationExtenison.EntityFrameworkCore.Stores
 
         public Task<TEntity> FindByIdAsync(string id, CancellationToken cancellationToken)
         {
-            return Table.FindAsync(id, cancellationToken).AsTask();
+            cancellationToken.ThrowIfCancellationRequested();
+            return Table.FindAsync(new object[]{ id}, cancellationToken).AsTask();
         }
 
         public async Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken)
